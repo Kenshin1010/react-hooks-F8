@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "babel-plugin-react-compiler": "^0.0.0-experimental-592953e-20240517",
+    "immer": "^10.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "use-immer": "^0.9.0",
+    "vite-plugin-babel": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
