@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
+import MountedUnmounted from "./hooks/F8/MountedUnmounted/MountedUnmounted";
 import CounterF8 from "./hooks/F8/useState/CounterF8";
 import Gift from "./hooks/F8/useState/RandomGift/Gift";
 import TodoListF8 from "./hooks/F8/useState/TodoListF8/TodoListF8";
@@ -22,8 +24,10 @@ import StateCount from "./hooks/useState/StoringInformation/StateCount";
 import TodoList from "./hooks/useState/TodoList";
 import BucketList from "./hooks/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
+import Content from "./hooks/F8/useEffect/Content";
 
 function App() {
+  const [show, setShow] = useState(false);
   return (
     <>
       <div>
@@ -76,6 +80,15 @@ function App() {
         </div>
         <div>
           <TodoListF8 />
+        </div>
+        <div>
+          <button onClick={() => setShow(!show)}>Toggle</button>
+          {show && (
+            <p>
+              <MountedUnmounted />
+              <Content />
+            </p>
+          )}
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
