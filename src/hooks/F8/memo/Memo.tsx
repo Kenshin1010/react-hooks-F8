@@ -8,13 +8,19 @@ import { memo } from "react";
 // Render props
 
 interface MemoProps {
-  count: number;
+  count?: number;
+  onIncrease?: () => void;
 }
-function Memo({ count }: MemoProps) {
+function Memo({ count, onIncrease }: MemoProps) {
   console.log("re-render");
   console.log(count);
 
-  return <h2>HELLO ANH EM F8 {count}</h2>;
+  return (
+    <>
+      <h2>HELLO ANH EM F8 {count}</h2>
+      <button onClick={onIncrease}>Click me!</button>
+    </>
+  );
 }
 
 export default memo(Memo);

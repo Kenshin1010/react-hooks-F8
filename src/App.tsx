@@ -30,6 +30,8 @@ import StateCount from "./hooks/ReactDev/useState/StoringInformation/StateCount"
 import TodoList from "./hooks/ReactDev/useState/TodoList";
 import BucketList from "./hooks/ReactDev/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
+import Chat from "./hooks/ReactDev/useEffect/ChatRoom";
+import CountCallback from "./hooks/F8/useCallback/CountCallback";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -109,6 +111,12 @@ function App() {
         </div>
         <div>
           <CountDown />
+        </div>
+        <div style={{ marginTop: "54px" }}>
+          <Chat />
+        </div>
+        <div>
+          <CountCallback />
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
