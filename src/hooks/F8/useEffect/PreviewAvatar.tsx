@@ -33,6 +33,9 @@ function PreviewAvatar() {
       const avatarFile = file as AvatarFile;
       avatarFile.preview = URL.createObjectURL(file);
       setAvatar(avatarFile);
+
+      // Reset input value
+      e.target.value = "";
     }
   };
   return (
@@ -41,7 +44,10 @@ function PreviewAvatar() {
       <button onClick={() => setCount(count + 1)}>Click me!</button>
 
       <input type="file" multiple onChange={handlePreviewAvatar} />
-      {avatar && <img src={avatar.preview} alt="" width={"200px"} />}
+      {avatar && (
+        // avatar.preview!: Sử dụng toán tử không xác định (!) để chỉ rõ rằng preview sẽ không phải là undefined tại thời điểm đó.
+        <img src={avatar.preview!} alt="Avatar Preview" width={"200px"} />
+      )}
     </div>
   );
 }

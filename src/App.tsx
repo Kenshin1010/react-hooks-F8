@@ -27,6 +27,7 @@ import viteLogo from "/vite.svg";
 import Content from "./hooks/F8/useEffect/Content";
 import TimerFunc from "./hooks/F8/useEffect/TimerFunc";
 import PreviewAvatar from "./hooks/F8/useEffect/PreviewAvatar";
+import FakeChatApp from "./hooks/F8/useEffect/FakeChatApp";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -97,6 +98,9 @@ function App() {
         </div>
         <div>
           <PreviewAvatar />
+        </div>
+        <div>
+          <FakeChatApp />
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
