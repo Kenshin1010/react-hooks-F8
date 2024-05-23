@@ -23,7 +23,7 @@ import { useEffect, useState } from "react";
     - Clear timers
  */
 
-function UseEffectTimerFunc() {
+function TimerFunc() {
   const [countdown, setCountdown] = useState(180);
 
   //   setInterval
@@ -53,4 +53,4 @@ function UseEffectTimerFunc() {
   );
 }
 
-export default UseEffectTimerFunc;
+export default TimerFunc;

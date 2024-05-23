@@ -25,7 +25,8 @@ import TodoList from "./hooks/useState/TodoList";
 import BucketList from "./hooks/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
 import Content from "./hooks/F8/useEffect/Content";
-import UseEffectTimerFunc from "./hooks/F8/useEffect/UseEffectTimerFunc";
+import TimerFunc from "./hooks/F8/useEffect/TimerFunc";
+import PreviewAvatar from "./hooks/F8/useEffect/PreviewAvatar";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -92,7 +93,10 @@ function App() {
           )}
         </div>
         <div>
-          <UseEffectTimerFunc />
+          <TimerFunc />
+        </div>
+        <div>
+          <PreviewAvatar />
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
