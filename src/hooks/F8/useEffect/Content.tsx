@@ -1,4 +1,28 @@
 import { useEffect, useState } from "react";
+import { DataType } from "./TypeArray";
+
+// Side effects
+
+// Events: Add / remove event listener
+// Observer pattern: Subscribe / unsubscribe
+// Closure
+// Timers: setInterval, setTimeout, clearInterval, clearTimeout
+// useState
+// Mounted / unmounted
+// ===
+// Call API
+
+/**
+1. Update DOM
+    - F8 blog title
+2. Call API
+3. Listen DOM events
+    - Scroll
+    - Resize
+4. Cleanup
+    - Remove listener / Unsubscribe
+    - Clear timers
+ */
 
 // 1. useEffect(callback)
 // - Gọi callback mỗi khi component re-render
@@ -11,12 +35,13 @@ import { useEffect, useState } from "react";
 // ----------
 // 1. Callback luôn được gọi sau khi component mounted
 // 2. Cleanup function luôn được gọi trước khi component unmounted
+// 3. Cleanup function luôn được gọi trước khi callback được gọi (trừ lần mounted đầu tiên)
 
 const tabs = ["posts", "comments", "albums", "photos", "todos", "users"];
 
 function Content() {
   const [title, setTitle] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<DataType[]>([]);
   const [type, setType] = useState("posts");
 
   const [showGoToTop, setShowGoToTop] = useState(false);
@@ -97,7 +122,9 @@ function Content() {
       <input onChange={(e) => setTitle(e.target.value)} value={title} />
       <ul>
         {data.map((detail) => (
-          <li key={detail.id}>{detail.title || detail.name}</li>
+          <li key={detail.id}>
+            {"title" in detail ? detail.title : detail.name}
+          </li>
         ))}
         {showGoToTop && (
           <button

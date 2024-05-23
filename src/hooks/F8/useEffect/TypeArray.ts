@@ -1,10 +1,10 @@
-export interface PostType {
+interface PostType {
   id: number;
   title: string;
   body: string;
 }
 
-export interface CommentType {
+interface CommentType {
   postId: number;
   id: number;
   name: string;
@@ -12,13 +12,13 @@ export interface CommentType {
   body: string;
 }
 
-export interface AlbumType {
+interface AlbumType {
   userId: number;
   id: number;
   title: string;
 }
 
-export interface PhotoType {
+interface PhotoType {
   albumId: number;
   id: number;
   title: string;
@@ -26,14 +26,14 @@ export interface PhotoType {
   thumbnailURL: string;
 }
 
-export interface TodoType {
+interface TodoType {
   userId: number;
   id: number;
   title: string;
   completed: boolean;
 }
 
-export interface UserType {
+interface UserType {
   id: number;
   name: string;
   username: string;
@@ -56,3 +56,12 @@ export interface UserType {
     bs: string;
   };
 }
+
+// Union type of all possible data types
+export type DataType =
+  | PostType
+  | CommentType
+  | AlbumType
+  | PhotoType
+  | TodoType
+  | UserType;

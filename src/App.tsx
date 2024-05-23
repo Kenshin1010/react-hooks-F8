@@ -25,6 +25,7 @@ import TodoList from "./hooks/useState/TodoList";
 import BucketList from "./hooks/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
 import Content from "./hooks/F8/useEffect/Content";
+import UseEffectTimerFunc from "./hooks/F8/useEffect/UseEffectTimerFunc";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -84,11 +85,14 @@ function App() {
         <div>
           <button onClick={() => setShow(!show)}>Toggle</button>
           {show && (
-            <p>
+            <div>
               <MountedUnmounted />
               <Content />
-            </p>
+            </div>
           )}
+        </div>
+        <div>
+          <UseEffectTimerFunc />
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
