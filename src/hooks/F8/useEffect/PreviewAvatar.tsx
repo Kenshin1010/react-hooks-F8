@@ -1,11 +1,13 @@
 import { ChangeEvent, useEffect, useState } from "react";
+import Memo from "../memo/Memo";
 
 interface AvatarFile extends File {
   preview?: string;
 }
 
 function PreviewAvatar() {
-  const [count, setCount] = useState<number>(1);
+  const [count, setCount] = useState<number>(0);
+  const [count2, setCount2] = useState<number>(0);
   const [avatar, setAvatar] = useState<AvatarFile | null>(null);
 
   useEffect(() => {
@@ -40,8 +42,11 @@ function PreviewAvatar() {
   };
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      <Memo count={count} />
       <h1>{count}</h1>
+      <h1>{count2}</h1>
       <button onClick={() => setCount(count + 1)}>Click me!</button>
+      <button onClick={() => setCount2(count2 + 1)}>Click me 2!</button>
 
       <input type="file" multiple onChange={handlePreviewAvatar} />
       {avatar && (
