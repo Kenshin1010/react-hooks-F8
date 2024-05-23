@@ -32,6 +32,7 @@ import BucketList from "./hooks/ReactDev/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
 import Chat from "./hooks/ReactDev/useEffect/ChatRoom";
 import CountCallback from "./hooks/F8/useCallback/CountCallback";
+import FormUseMemo from "./hooks/F8/memo/FormUseMemo";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -117,6 +118,9 @@ function App() {
         </div>
         <div>
           <CountCallback />
+        </div>
+        <div>
+          <FormUseMemo />
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

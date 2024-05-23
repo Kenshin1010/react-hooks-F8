@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useChatRoom } from "./useChatRoom.js";
-import { ConnectionType, RoomType } from "./chat.js";
+import { useChatRoom } from "./useChatRoom.ts";
 
-function ChatRoom({ roomId }: RoomType) {
-  const [serverUrl, setServerUrl] = useState("https://localhost:1234");
+function ChatRoom({ roomId }: { roomId: string }) {
+  const [serverUrl, setServerUrl] = useState("https://localhost:5173");
 
-  useChatRoom<ConnectionType>({
+  useChatRoom({
     roomId: roomId,
     serverUrl: serverUrl,
   });
@@ -24,7 +23,7 @@ function ChatRoom({ roomId }: RoomType) {
   );
 }
 
-export default function App() {
+export default function Chat() {
   const [roomId, setRoomId] = useState("general");
   const [show, setShow] = useState(false);
   return (

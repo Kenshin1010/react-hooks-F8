@@ -1,10 +1,6 @@
-export interface RoomType {
-  roomId: string;
-}
-
 export type ConnectionType = {
   serverUrl: string;
-  roomId: RoomType;
+  roomId: string;
 };
 
 export function createConnection({ serverUrl, roomId }: ConnectionType) {
