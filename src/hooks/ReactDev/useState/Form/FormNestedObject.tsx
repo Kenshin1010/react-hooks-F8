@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DavidGarrettImage from "../../../assets/images/davidgarrett.webp";
+import DavidGarrettImage from "../../../../assets/images/davidgarrett.webp";
 
 export default function FormNestedObject() {
   const [person, setPerson] = useState({
