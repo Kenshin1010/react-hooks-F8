@@ -33,6 +33,9 @@ import viteLogo from "/vite.svg";
 import Chat from "./hooks/ReactDev/useEffect/ChatRoom";
 import CountCallback from "./hooks/F8/useCallback/CountCallback";
 import FormUseMemo from "./hooks/F8/memo/FormUseMemo";
+import CountUseReducer from "./hooks/F8/useReducer/CountUseReducer";
+import TodoAppUseReducer from "./hooks/F8/useReducer/TodoAppUseReducer";
+import Todo from "./hooks/F8/useReducer/useReducerRecap/Todo";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -93,6 +96,7 @@ function App() {
           <button onClick={() => setShow(!show)}>Toggle</button>
           {show && (
             <div>
+              <FakeChatApp />
               <MountedUnmounted />
               <Content />
             </div>
@@ -103,9 +107,6 @@ function App() {
         </div>
         <div>
           <PreviewAvatar />
-        </div>
-        <div>
-          <FakeChatApp />
         </div>
         <div>
           <UseLayoutEffect />
@@ -121,6 +122,13 @@ function App() {
         </div>
         <div>
           <FormUseMemo />
+        </div>
+        <div>
+          <CountUseReducer />
+        </div>
+        <div>
+          <TodoAppUseReducer />
+          <Todo />
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
