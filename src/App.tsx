@@ -2,11 +2,18 @@ import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import MountedUnmounted from "./hooks/F8/MountedUnmounted/MountedUnmounted";
+import CountMemoTest from "./hooks/F8/memo/CountMemoTest";
+import FormUseMemo from "./hooks/F8/memo/FormUseMemo";
+import CountCallback from "./hooks/F8/useCallback/CountCallback";
+import ThemeContextApp from "./hooks/F8/useContext/ThemeContextApp";
 import Content from "./hooks/F8/useEffect/Content";
 import FakeChatApp from "./hooks/F8/useEffect/FakeChatApp";
 import PreviewAvatar from "./hooks/F8/useEffect/PreviewAvatar";
 import TimerFunc from "./hooks/F8/useEffect/TimerFunc";
 import UseLayoutEffect from "./hooks/F8/useLayoutEffect/UseLayoutEffect";
+import CountUseReducer from "./hooks/F8/useReducer/CountUseReducer";
+import TodoAppUseReducer from "./hooks/F8/useReducer/TodoAppUseReducer";
+import Todo from "./hooks/F8/useReducer/useReducerRecap/Todo";
 import CountDown from "./hooks/F8/useRef/CountDown";
 import CounterF8 from "./hooks/F8/useState/CounterF8";
 import Gift from "./hooks/F8/useState/RandomGift/Gift";
@@ -21,6 +28,7 @@ import MyButton from "./hooks/ReactDev/TypeScript/MyButton";
 import FormUseBack from "./hooks/ReactDev/TypeScript/useCallback/FormUseCallback";
 import GetTheme from "./hooks/ReactDev/TypeScript/useContext/GetTheme";
 import CounterStateReducer from "./hooks/ReactDev/TypeScript/useReducer/CounterStateReducer";
+import Chat from "./hooks/ReactDev/useEffect/ChatRoom";
 import CountVite from "./hooks/ReactDev/useState/CountVite";
 import Counter from "./hooks/ReactDev/useState/Counter";
 import Form from "./hooks/ReactDev/useState/Form/Form";
@@ -30,12 +38,8 @@ import StateCount from "./hooks/ReactDev/useState/StoringInformation/StateCount"
 import TodoList from "./hooks/ReactDev/useState/TodoList";
 import BucketList from "./hooks/ReactDev/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
-import Chat from "./hooks/ReactDev/useEffect/ChatRoom";
-import CountCallback from "./hooks/F8/useCallback/CountCallback";
-import FormUseMemo from "./hooks/F8/memo/FormUseMemo";
-import CountUseReducer from "./hooks/F8/useReducer/CountUseReducer";
-import TodoAppUseReducer from "./hooks/F8/useReducer/TodoAppUseReducer";
-import Todo from "./hooks/F8/useReducer/useReducerRecap/Todo";
+import ContentTestRecap from "./hooks/F8/useContext/useContextRecap/ContentTestRecap";
+import { ThemeProvider } from "./hooks/F8/useContext/useContextRecap/ThemeContext";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -121,6 +125,9 @@ function App() {
           <CountCallback />
         </div>
         <div>
+          <CountMemoTest />
+        </div>
+        <div style={{ marginTop: "54px" }}>
           <FormUseMemo />
         </div>
         <div>
@@ -130,6 +137,12 @@ function App() {
           <TodoAppUseReducer />
           <Todo />
         </div>
+        <div>
+          <ThemeContextApp />
+        </div>
+        <ThemeProvider>
+          <ContentTestRecap />
+        </ThemeProvider>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
