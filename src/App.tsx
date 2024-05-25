@@ -1,11 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
+import ContextUseReducer from "./hooks/F8/GlobalState/ContextUseReducer";
 import MountedUnmounted from "./hooks/F8/MountedUnmounted/MountedUnmounted";
 import CountMemoTest from "./hooks/F8/memo/CountMemoTest";
 import FormUseMemo from "./hooks/F8/memo/FormUseMemo";
 import CountCallback from "./hooks/F8/useCallback/CountCallback";
 import ThemeContextApp from "./hooks/F8/useContext/ThemeContextApp";
+import ContentTestRecap from "./hooks/F8/useContext/useContextRecap/ContentTestRecap";
+import { ThemeProvider } from "./hooks/F8/useContext/useContextRecap/ThemeContext";
 import Content from "./hooks/F8/useEffect/Content";
 import FakeChatApp from "./hooks/F8/useEffect/FakeChatApp";
 import PreviewAvatar from "./hooks/F8/useEffect/PreviewAvatar";
@@ -38,8 +41,7 @@ import StateCount from "./hooks/ReactDev/useState/StoringInformation/StateCount"
 import TodoList from "./hooks/ReactDev/useState/TodoList";
 import BucketList from "./hooks/ReactDev/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
-import ContentTestRecap from "./hooks/F8/useContext/useContextRecap/ContentTestRecap";
-import { ThemeProvider } from "./hooks/F8/useContext/useContextRecap/ThemeContext";
+import { StoreProvider } from "./store";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -143,6 +145,10 @@ function App() {
         <ThemeProvider>
           <ContentTestRecap />
         </ThemeProvider>
+        <StoreProvider>
+          <ContextUseReducer />
+        </StoreProvider>
+
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
