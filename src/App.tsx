@@ -42,6 +42,7 @@ import TodoList from "./hooks/ReactDev/useState/TodoList";
 import BucketList from "./hooks/ReactDev/useState/useImmer/BucketList";
 import viteLogo from "/vite.svg";
 import { StoreProvider } from "./store";
+import UseImprerativeHandle from "./hooks/F8/HandleHook/UseImprerativeHandle";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -148,7 +149,9 @@ function App() {
         <StoreProvider>
           <ContextUseReducer />
         </StoreProvider>
-
+        <div>
+          <UseImprerativeHandle />
+        </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
