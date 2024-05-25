@@ -12,12 +12,19 @@ interface VideoProps {
   ref: React.RefObject<HTMLVideoElement>;
 }
 
-function Video(props: VideoProps, ref: React.Ref<HTMLVideoElement>) {
+type VideoHandle = {
+  play: () => Promise<void>;
+  pause: () => void;
+};
+
+function Video(props: VideoProps, ref: React.Ref<VideoHandle>) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useImperativeHandle(ref, () => ({
-    play() {
-      videoRef.current?.play();
+    async play() {
+      if (videoRef.current) {
+        await videoRef.current.play();
+      }
     },
     pause() {
       videoRef.current?.pause();
